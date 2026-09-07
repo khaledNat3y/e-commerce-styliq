@@ -81,7 +81,9 @@ class _LoginFormState extends State<LoginForm> {
               fontSize: 14.sp,
               width: double.infinity,
               bordersRadius: 10,
-              onPress: () {},
+              onPress: () {
+                context.go(AppRoutes.mainScreen);
+              },
             ),
           ),
 

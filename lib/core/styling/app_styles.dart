@@ -24,4 +24,11 @@ class AppStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.blackColor,
   );
+
+  static TextStyle font18BlackMedium = TextStyle(
+    fontFamily: AppFonts.mainFontName,
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.blackColor,
+  );
 }
