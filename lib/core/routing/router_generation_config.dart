@@ -1,6 +1,7 @@
 import 'package:ecommerce_styliq/core/routing/app_routes.dart';
 import 'package:ecommerce_styliq/features/auth/login_screen.dart';
 import 'package:ecommerce_styliq/features/auth/register_screen.dart';
+import 'package:ecommerce_styliq/features/main_screen/main_screen.dart';
 import 'package:go_router/go_router.dart';
 
 class RouterGenerationConfig {
@@ -16,6 +17,11 @@ class RouterGenerationConfig {
         path: AppRoutes.registerScreen,
         name: AppRoutes.registerScreen,
         builder: (context, state) => const RegisterScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.mainScreen,
+        name: AppRoutes.mainScreen,
+        builder: (context, state) => const MainScreen(),
       ),
     ],
   );
