@@ -9,14 +9,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginForm extends StatefulWidget {
-  const LoginForm({super.key});
+class RegisterForm extends StatefulWidget {
+  const RegisterForm({super.key});
 
   @override
-  State<LoginForm> createState() => _LoginFormState();
+  State<RegisterForm> createState() => _RegisterFormState();
 }
 
-class _LoginFormState extends State<LoginForm> {
+class _RegisterFormState extends State<RegisterForm> {
   late final TextEditingController _emailController;
   late final TextEditingController _passwordController;
   late final GlobalKey<FormState> _formKey;
@@ -43,8 +43,17 @@ class _LoginFormState extends State<LoginForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Text("Full Name", style: AppStyles.font16BlackMedium),
+          CustomTextField(
+            hintText: "Enter your full name",
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
+          ),
           Text("User Name", style: AppStyles.font16BlackMedium),
-
           CustomTextField(
             hintText: "Enter Your email address",
             controller: _emailController,
@@ -90,17 +99,17 @@ class _LoginFormState extends State<LoginForm> {
           Center(
             child: Text.rich(
               TextSpan(
-                text: "Don't have an account? ",
+                text: "Already have an account? ",
                 style: AppStyles.subtitlesStyles,
                 children: [
                   TextSpan(
-                    text: "Sign up",
+                    text: "Log In",
                     style: AppStyles.font16BlackMedium.copyWith(
                       color: AppColors.blackColor,
                       decoration: TextDecoration.underline,
                     ),
                     recognizer: TapGestureRecognizer()
-                      ..onTap = () => context.go(AppRoutes.registerScreen),
+                      ..onTap = () => context.go(AppRoutes.loginScreen),
                   ),
                 ],
               ),
