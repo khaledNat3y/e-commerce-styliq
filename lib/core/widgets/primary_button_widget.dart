@@ -13,6 +13,7 @@ class PrimaryButtonWidget extends StatelessWidget {
   final double? fontSize;
   final void Function()? onPress;
   final IconData? prefixIcon;
+  final Icon? trailingIcon;
   const PrimaryButtonWidget({
     super.key,
     this.buttonText,
@@ -24,6 +25,7 @@ class PrimaryButtonWidget extends StatelessWidget {
     this.textColor,
     this.onPress,
     this.prefixIcon,
+    this.trailingIcon,
   });
 
   @override
@@ -52,6 +54,8 @@ class PrimaryButtonWidget extends StatelessWidget {
               fontSize: fontSize ?? 16.sp,
             ),
           ),
+          trailingIcon == null ? SizedBox.shrink() : trailingIcon!,
+          trailingIcon == null ? SizedBox.shrink() : horizontalSpace(8),
         ],
       ),
     );

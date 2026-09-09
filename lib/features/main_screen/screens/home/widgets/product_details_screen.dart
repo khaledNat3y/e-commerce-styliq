@@ -1,9 +1,11 @@
 import 'package:ecommerce_styliq/core/helpers/spacing.dart';
+import 'package:ecommerce_styliq/core/routing/app_routes.dart';
 import 'package:ecommerce_styliq/core/styling/app_colors.dart';
 import 'package:ecommerce_styliq/core/styling/app_styles.dart';
 import 'package:ecommerce_styliq/core/widgets/primary_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   const ProductDetailsScreen({super.key});
@@ -48,7 +50,9 @@ class ProductDetailsScreen extends StatelessWidget {
 
                     PrimaryButtonWidget(
                       buttonText: "Add to Cart",
-                      onPress: () {},
+                      onPress: () {
+                        context.goNamed(AppRoutes.cartScreen);
+                      },
                       width: 160.w,
                       height: 56.h,
                       prefixIcon: Icons.shopping_bag_outlined,

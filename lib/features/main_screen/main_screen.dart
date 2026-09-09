@@ -1,4 +1,5 @@
 import 'package:ecommerce_styliq/core/styling/app_colors.dart';
+import 'package:ecommerce_styliq/features/main_screen/screens/cart/cart_screen.dart';
 import 'package:ecommerce_styliq/features/main_screen/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,7 +16,7 @@ class _MainScreenState extends State<MainScreen> {
 
   List<Widget> screens = [
     HomeScreen(),
-    Container(),
+    CartScreen(),
     Container(
       width: double.infinity,
       height: double.infinity,
