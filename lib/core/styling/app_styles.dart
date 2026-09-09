@@ -31,4 +31,10 @@ class AppStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.blackColor,
   );
+  static TextStyle font24BlackSemiBold = TextStyle(
+    fontFamily: AppFonts.mainFontName,
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.blackColor,
+  );
 }

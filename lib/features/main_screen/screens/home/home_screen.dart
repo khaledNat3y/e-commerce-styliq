@@ -1,12 +1,14 @@
 import 'package:ecommerce_styliq/core/helpers/spacing.dart';
+import 'package:ecommerce_styliq/core/routing/app_routes.dart';
 import 'package:ecommerce_styliq/core/styling/app_colors.dart';
 import 'package:ecommerce_styliq/core/styling/app_styles.dart';
-import 'package:ecommerce_styliq/core/widgets/product_card.dart';
+import 'package:ecommerce_styliq/features/main_screen/screens/home/widgets/product_card.dart';
 import 'package:ecommerce_styliq/features/main_screen/screens/home/widgets/category_items_list_view.dart';
 import 'package:ecommerce_styliq/features/main_screen/screens/home/widgets/search_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -54,10 +56,21 @@ class HomeScreen extends StatelessWidget {
                 childAspectRatio: 0.7,
               ),
               itemBuilder: (context, index) {
-                return ProductCard(
+                final product = ProductCard(
                   image: "assets/images/shoes.png",
                   name: "shoes",
                   price: "50",
+                );
+                return InkWell(
+                  splashColor: AppColors.primaryColor,
+                  onTap: () {
+                    GoRouter.of(context).pushNamed(AppRoutes.productDetails);
+                  },
+                  child: ProductCard(
+                    image: product.image,
+                    name: product.name,
+                    price: product.price,
+                  ),
                 );
               },
             ),
